@@ -11,5 +11,16 @@
 
   <body>
     <%= yield %>
+      <br>
+      <% if flash[:errors] %>
+        <% flash[:errors].each do |error| %>
+          <%= error %>
+        <% end %>
+      <% elsif flash[:messages] %>
+        <% flash[:messages].each do |message| %>
+          <%= message %>
+        <% end %>
+      <% end %>
+      <br>
   </body>
 </html>
