@@ -10,7 +10,21 @@
   </head>
 
   <body>
-  
+    <div class="header">
+      <h1>Music App</h1>
+    </div>
+    <div class="logs">
+      <% if logged_in? %>
+        <h2>Welcome <%= current_user.email %></h2>
+          <form action="<%= session_url %>" method="POST">
+            <input type="hidden" name="_method" value="DELETE">
+            <button>Log Out</button>
+          </form>
+      <% else %>
+        <!--<h2>Log In</h2>-->
+          <a href="<% new_session_url %>">Log In</a>
+      <% end %>
+    </div>
     <%= yield %>
       <br>
       <% if flash[:errors] %>

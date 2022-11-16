@@ -1,0 +1,26 @@
+.header {
+    display: flex;
+    justify-content: center;
+    padding: 25px;
+    background-color: darkblue;
+    color: darkorange;
+    font-size: x-large;
+}
+
+button {
+    background-color: black;
+    color: whitesmoke;
+    border-radius: 5px;
+}
+
+.logs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.logs h2 {
+    display: flex;
+    justify-content: center;
+    font-size: x-large;
+}
