@@ -8,8 +8,10 @@ class SessionsController < ApplicationController
         @user = User.find_by_credentials(params[:user][:email], params[:user][:password])
         if @user
             login(@user)
-            redirect_to user_url
+            flash[:messages] = ["Login successful, enjoy the tunes."]
+            redirect_to user_url(@user)
         else
+            flash.now[:errors] = ["Invalid username/password"]
             render :new
         end
     end

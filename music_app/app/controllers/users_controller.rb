@@ -21,16 +21,16 @@ class UsersController < ApplicationController
         @user = User.new
         render :new
     end
+    
+    def show
+        @user = User.find_by(id: params[:id])
+        render :show
+    end
 
     # def edit
     #     @user = User.find_by_credentials #find_by(id: params[:id])
     #     render :edit
     # end
-
-    def show
-        @user = User.find_by_credentials(params[:email], params[:password])
-        render :show
-    end
 
     # def update
     #     user = User.find_by_credentials
